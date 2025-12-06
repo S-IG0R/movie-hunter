@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './header.module.css';
+import { Logo } from '../../components/Logo/Logo';
 
 class Header extends React.Component {
   constructor() {
@@ -7,7 +7,11 @@ class Header extends React.Component {
   }
 
   render() {
-    return <header className={styles.header}></header>;
+    return (
+      <header className="flex justify-center bg-[#101010] py-10 bg">
+        <Logo />
+      </header>
+    );
   }
 }
 

@@ -10,8 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroui/button": "^2.2.27",
+    "@heroui/card": "^2.2.25",
+    "@heroui/image": "^2.2.17",
+    "@heroui/input": "^2.4.28",
+    "@heroui/pagination": "^2.2.24",
+    "@heroui/radio": "^2.3.27",
+    "@heroui/react": "^2.8.5",
+    "@heroui/spinner": "^2.2.24",
+    "@tailwindcss/vite": "^4.1.17",
+    "framer-motion": "^12.23.25",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
