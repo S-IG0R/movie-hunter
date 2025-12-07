@@ -16,12 +16,17 @@ class Search extends React.Component {
   }
 
   render() {
-    const { inputValue, onChangeInput, onSearch, type, onSelectType } = this.props;
-
-    console.log(type);
+    const {
+      inputValue,
+      onChangeInput,
+      onSearch,
+      type,
+      onSelectType,
+      isLoading,
+    } = this.props;
     return (
-      <div className="flex flex-col gap-3 sm:bg-[#1c1c1c] bg-transparent mt-[55px] self-center justify-center w-[100%] max-w-[700px] p-[5px] rounded-[18px]">
-        <div className="flex flex-col sm:flex-row gap-[12px]">
+      <div className="flex flex-col gap-2 self-center justify-center w-[100%] max-w-[700px] sm:mt-[55px] mt-[25px]">
+        <div className="flex flex-col sm:flex-row sm:p-[5px] sm:gap-[5px] gap-[8px] sm:bg-[#1c1c1c] bg-transparent p-auto rounded-[18px]">
           <Input
             classNames={{
               inputWrapper: 'h-15',
@@ -35,8 +40,12 @@ class Search extends React.Component {
             size="lg"
             radius="lg"
             variant="faded"
+            isDisabled={isLoading}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') onSearch();
+              if (e.key === 'Enter') {
+                if(!inputValue) return
+                onSearch();
+              }
             }}
           />
           <Button
@@ -46,7 +55,7 @@ class Search extends React.Component {
             size="lg"
             radius="lg"
             type="button"
-            isDisabled={!inputValue.length || !type}
+            isDisabled={!inputValue.length || !type || isLoading}
             onPress={onSearch}
           >
             Search
@@ -54,7 +63,7 @@ class Search extends React.Component {
         </div>
         <RadioSelect
           onSelect={onSelectType}
-          inputData={inputValue.length}
+          isDisabled={!inputValue.length || isLoading}
           type={type}
         />
       </div>

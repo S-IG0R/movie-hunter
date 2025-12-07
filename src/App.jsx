@@ -12,8 +12,9 @@ class App extends React.Component {
     totalFilms: 0,
     isLoading: false,
     currentPage: 1,
+    inputValue: '',
     request: '',
-    type: '',
+    type: 'all',
   };
 
   getData = async ({ page, request, type }) => {
@@ -46,30 +47,28 @@ class App extends React.Component {
   };
 
   onSearch = () => {
-    const { request, type } = this.state;
+    const { type } = this.state;
     this.setState(
-      () => ({ currentPage: 1 }),
+      () => ({ currentPage: 1, request: this.state.inputValue }),
       () => {
-        this.getData({ request, type });
+        this.getData({ request: this.state.inputValue, type });
       }
     );
   };
 
   onSelectType = (e) => {
     const type = e.target.value;
-    const { request } = this.state;
     this.setState(
-      () => ({ type, currentPage: 1 }),
+      () => ({ type, request: this.state.inputValue, currentPage: 1 }),
       () => {
-        this.getData({ request, type });
+        this.getData({ request: this.state.inputValue, type });
       }
     );
   };
 
   onChangeInput = (e) => {
-    const request = e.target.value;
-    console.log(request);
-    this.setState({ request });   
+    const inputValue = e.target.value;
+    this.setState({ inputValue });
   };
 
   componentDidMount() {
@@ -82,7 +81,8 @@ class App extends React.Component {
         <Header />
         <Page>
           <Search
-            inputValue={this.state.request}
+            isLoading={this.state.isLoading}
+            inputValue={this.state.inputValue}
             type={this.state.type}
             onSearch={this.onSearch}
             onSelectType={this.onSelectType}

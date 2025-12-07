@@ -69,7 +69,7 @@ class MovieCard extends React.Component {
 
         <Card
           isPressable
-          className="flex flex-col gap-2 h-full w-full rounded-[15px] group relative"
+          className="flex flex-col h-full w-full rounded-[15px] group relative"
         >
           {/* <img
             className="object-cover block rounded-[10px] aspect-[2.2/3] m-3"
@@ -77,7 +77,7 @@ class MovieCard extends React.Component {
             alt={Title?.trim()}
             onError={this.handleError}
           /> */}
-          <div className="p-3 aspect-[2.2/3]">
+          <div className="p-3 h-full">
             <Image
               removeWrapper
               alt={Title?.trim()}
@@ -88,13 +88,13 @@ class MovieCard extends React.Component {
               decoding="async"
               classNames={{
                 wrapper: '!w-full !max-w-full !min-w-full block',
-                img: 'w-full h-full object-cover block rounded-[10px]',
+                img: 'w-full h-full object-cover block rounded-[10px] aspect-[2.2/3]',
               }}
             />
           </div>
 
-          <CardFooter className="text-large text-white">
-            <p className="text-left truncate m-3">{Title}</p>
+          <CardFooter className="ms-2 text-large text-white">
+            <p className="text-left truncate">{Title}</p>
           </CardFooter>
           <div className="flex flex-col justify-center items-center pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 z-[10] bg-black/45 backdrop-blur-lg">
             <span className=" text-large text-white px-4">{`«${Title}»`}</span>

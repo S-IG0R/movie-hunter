@@ -6,7 +6,7 @@ class Footer extends React.Component {
   }
 
   render() {
-    return <footer className='flex bg-[#101010] align-center justify-center py-10' >
+    return <footer className='flex bg-[#101010] align-center justify-center py-4' >
       <span>Copyright {new Date().getFullYear()}</span>
     </footer>;
   }
