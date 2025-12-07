@@ -1,18 +1,49 @@
-# React + Vite
+# 🎬 MovieHunter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MovieHunter** — одностраничное приложение для поиска фильмов с отзывчивым интерфейсом на **CSS Grid**: поиск, фильтры и пагинация.  
+Данные берутся из **OMDb API**. Логотип проекта сгенерирован нейронной сетью.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Возможности
 
-## React Compiler
+- 🔎 Поиск фильмов по названию
+- 🧰 Фильтры (по типу/году и т.п. — зависит от реализации)
+- 📄 Пагинация результатов
+- 📱 Отзывчивый UI (Grid)
+- ⚡ Tailwind + HeroUI
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🧩 Технологии
 
-## Expanding the ESLint configuration
+- **React 19**
+- **Class Components** (как повторение + жизненные циклы вместо hooks)
+- **Tailwind CSS** (первое знакомство)
+- **HeroUI** (первое знакомство)
+- **OMDb API**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✅ Требования
+
+- **Node.js** (рекомендуется актуальная LTS-версия)
+- **npm** (или любой другой менеджер пакетов — `pnpm/yarn`)
+
+---
+
+## 🔑 Переменные окружения (OMDb API)
+
+Чтобы приложение работало, нужен API ключ OMDb.
+
+1) Создай файл `.env` в корне проекта  
+2) Добавь переменные:
+
+VITE_OMDB_API_KEY=Твой ключ
+VITE_BASE_API_URL=https://www.omdbapi.com/?apikey=
+
+## ⚙️ Запуск
+
+npm i
+npm run dev
+просмотр на http://localhost:5173
