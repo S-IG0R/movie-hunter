@@ -40,44 +40,11 @@ class MovieCard extends React.Component {
     const { Title, Year, imdbID } = this.props;
     return (
       <li className="w-full min-w-0">
-        {/* <Card
-          shadow="sm"
-          isPressable
-          disableRipple
-          className="h-full bg-[#222] overflow-hidden bg-clip-padding cursor-pointer group relative border-none rounded-2xl"
-        >
-          <CardBody className="overflow-visible p-3 ">
-            <Image
-                removeWrapper
-                alt={Title?.trim()}
-                className="block object-cover rounded-[10px]"
-                shadow="sm"
-                src={this.state.imgSrc}
-                onError={this.handleError}
-                decoding="async"
-                classNames={{
-                  wrapper: '!w-full !max-w-full !min-w-full block',
-                  img: 'w-full h-full object-cover block rounded-[10px]',
-                }}
-              />
-          </CardBody>
-
-          <CardFooter className="w-full min-w-0 text-large text-white">
-            <p className="min-w-0 w-full truncate">{Title}</p>
-          </CardFooter>
-        </Card> */}
-
         <Card
           isPressable
           className="flex flex-col h-full w-full rounded-[15px] group relative"
         >
-          {/* <img
-            className="object-cover block rounded-[10px] aspect-[2.2/3] m-3"
-            src={this.state.imgSrc}
-            alt={Title?.trim()}
-            onError={this.handleError}
-          /> */}
-          <div className="p-3 h-full">
+          <div className="p-3 h-full w-full">
             <Image
               removeWrapper
               alt={Title?.trim()}
