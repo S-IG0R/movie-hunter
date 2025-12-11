@@ -39,7 +39,7 @@ class MovieCard extends React.Component {
   render() {
     const { Title, Year, imdbID } = this.props;
     return (
-      <li className="w-full min-w-0">
+      <li className="w-full min-w-0 overflow-hidden">
         <Card
           isPressable
           className="flex flex-col h-full w-full rounded-[15px] group relative"
